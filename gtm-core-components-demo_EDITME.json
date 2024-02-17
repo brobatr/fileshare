@@ -1,0 +1,156 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2024-02-03 04:53:12",
+    "containerVersion": {
+        "path": "accounts/<yourAccountId>/containers/<yourContainerId>/versions/0",
+        "accountId": "<yourAccountId>",
+        "containerId": "<yourContainerId>",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/<yourAccountId>/containers/<yourContainerId>",
+            "accountId": "<yourAccountId>",
+            "containerId": "<yourContainerId>",
+            "name": "aem.local",
+            "publicId": "GTM-NPBVPPFV",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1689794324506",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/<yourAccountId>/containers/<yourContainerId>/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-NPBVPPFV"
+            ]
+        },
+        "trigger": [
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "triggerId": "3",
+                "name": "cmp_show",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "cmp:show"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1689794428754"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "variableId": "5",
+                "name": "dl_eventInfo",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "eventInfo.path"
+                    }
+                ],
+                "fingerprint": "1689795187222",
+                "formatValue": {}
+            },
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "variableId": "6",
+                "name": "dl_eventinfo_lang",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "{{dl_eventInfo}}.xdm:language"
+                    }
+                ],
+                "fingerprint": "1689795202434",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1706935992428",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/<yourAccountId>/containers/<yourContainerId>/versions/0?apiLink=version"
+    }
+}
