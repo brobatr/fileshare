@@ -1,17 +1,19 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2024-02-03 04:53:12",
+    "exportTime": "2024-02-19 06:50:53",
     "containerVersion": {
-        "path": "accounts/<yourAccountId>/containers/<yourContainerId>/versions/0",
+        "path": "accounts/<yourAccountId>/containers/<yourContainerId>",
         "accountId": "<yourAccountId>",
         "containerId": "<yourContainerId>",
-        "containerVersionId": "0",
+        "containerVersionId": "1",
+        "name": "1",
+        "description": "1",
         "container": {
             "path": "accounts/<yourAccountId>/containers/<yourContainerId>",
             "accountId": "<yourAccountId>",
             "containerId": "<yourContainerId>",
             "name": "aem.local",
-            "publicId": "GTM-NPBVPPFV",
+            "publicId": "<yourPublicId>",
             "usageContext": [
                 "WEB"
             ],
@@ -34,15 +36,15 @@
                 "supportTransformations": false
             },
             "tagIds": [
-                "GTM-NPBVPPFV"
+                "<yourPublicId>"
             ]
         },
         "trigger": [
             {
                 "accountId": "<yourAccountId>",
                 "containerId": "<yourContainerId>",
-                "triggerId": "3",
-                "name": "cmp_show",
+                "triggerId": "10",
+                "name": "dl_cmp_loaded",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -56,12 +58,71 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "cmp:show"
+                                "value": "cmp:loaded"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1689794428754"
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "cmp:loaded"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1708320458608"
+            },
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "triggerId": "14",
+                "name": "dl_cmp_click",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "cmp:click"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "cmp:click"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1708320401910"
             }
         ],
         "variable": [
@@ -116,6 +177,58 @@
                 ],
                 "fingerprint": "1689795202434",
                 "formatValue": {}
+            },
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "variableId": "12",
+                "name": "dl_eventinfo_title",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "{{dl_eventInfo}}.dc:title"
+                    }
+                ],
+                "fingerprint": "1708319281748",
+                "formatValue": {}
+            },
+            {
+                "accountId": "<yourAccountId>",
+                "containerId": "<yourContainerId>",
+                "variableId": "13",
+                "name": "dl_eventinfo_aemtype",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "{{dl_eventInfo}}.@type"
+                    }
+                ],
+                "fingerprint": "1708319375105",
+                "formatValue": {}
             }
         ],
         "builtInVariable": [
@@ -150,7 +263,7 @@
                 "name": "Event"
             }
         ],
-        "fingerprint": "1706935992428",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/<yourAccountId>/containers/<yourContainerId>/versions/0?apiLink=version"
+        "fingerprint": "1708321746574",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/<yourAccountId>/containers/<yourContainerId>"
     }
 }
